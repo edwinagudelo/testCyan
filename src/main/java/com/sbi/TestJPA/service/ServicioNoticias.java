@@ -23,7 +23,7 @@ import com.sbi.TestJPA.repository.AnalisisRepo;
 import com.sbi.TestJPA.util.Constantes;
 
 @Service
-public class Servicios {
+public class ServicioNoticias {
 	
 	@Autowired
     private PeticionRepo petiRepo;
@@ -46,7 +46,6 @@ public class Servicios {
 				XmlReader reader = new XmlReader(new URL(strUrl));
 				SyndFeed feed = new SyndFeedInput().build(reader);
                 for (SyndEntry entry : feed.getEntries()) {
-                	//Noticia tnoti = new Noticia(tpet, entry.getDescription().toString());
                 	Noticia tnoti = new Noticia(tpet, entry.getTitle().toString());
                 	tsnoti.add(tnoti);
                 }
