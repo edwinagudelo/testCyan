@@ -1,4 +1,4 @@
-package com.sbi.TestJPA.service;
+package com.sbi.TestJPA.services;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -14,13 +14,13 @@ import com.rometools.rome.io.SyndFeedInput;
 import com.rometools.rome.io.XmlReader;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.sbi.TestJPA.model.Peticion;
-import com.sbi.TestJPA.model.Noticia;
-import com.sbi.TestJPA.model.Analisis;
-import com.sbi.TestJPA.repository.PeticionRepo;
-import com.sbi.TestJPA.repository.NoticiaRepo;
-import com.sbi.TestJPA.repository.AnalisisRepo;
-import com.sbi.TestJPA.util.Constantes;
+import com.sbi.TestJPA.models.Peticion;
+import com.sbi.TestJPA.models.Noticia;
+import com.sbi.TestJPA.models.Analisis;
+import com.sbi.TestJPA.repositories.PeticionRepo;
+import com.sbi.TestJPA.repositories.NoticiaRepo;
+import com.sbi.TestJPA.repositories.AnalisisRepo;
+import com.sbi.TestJPA.utils.Constantes;
 
 @Service
 public class ServicioNoticias {

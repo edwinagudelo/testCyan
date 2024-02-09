@@ -1,4 +1,4 @@
-package com.sbi.TestJPA.model;
+package com.sbi.TestJPA.models;
 
 import java.util.Set;
 
