@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sbi.TestJPA.model.Llamado;
-import com.sbi.TestJPA.model.LLamadoWrap;
-import com.sbi.TestJPA.service.ServicioNoticias;
+import com.sbi.TestJPA.models.Llamado;
+import com.sbi.TestJPA.models.LLamadoWrap;
+import com.sbi.TestJPA.services.ServicioNoticias;
 
 @RestController
-@RequestMapping("analisis")
+@RequestMapping("analysis")
 public class AnalisisController {
 
 	private Logger logger = LoggerFactory.getLogger(AnalisisController.class);
@@ -30,7 +30,7 @@ public class AnalisisController {
 	private ServicioNoticias serv;
 	
 	@PostMapping(path="/new",  consumes="application/json", produces="application/json")
-	@ResponseBody public List<Integer> analizar(@RequestBody LLamadoWrap urls){
+	@ResponseBody public List<Integer> analize(@RequestBody LLamadoWrap urls){
 		List<String> parametro = new ArrayList<String>();
 		for(Llamado tll : urls.getUrls()) {
 			parametro.add(tll.getUrl());
@@ -41,7 +41,7 @@ public class AnalisisController {
 	
 	@GetMapping(path="/frequency/{id}",   produces="application/json")
 	@ResponseBody public HashMap<String, Integer> frecuencia(@PathVariable("id") Integer petid){
-		logger.info(String.format("Receiving request for ID {}", petid));
+		logger.info(String.format("Receiving request for ID %d", petid));
 		return serv.frecuencia(petid);
 	}
 }

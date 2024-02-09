@@ -1,4 +1,4 @@
-package com.sbi.TestJPA.util;
+package com.sbi.TestJPA.utils;
 
 
 public class Constantes {
