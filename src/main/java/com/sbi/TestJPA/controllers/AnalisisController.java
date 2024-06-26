@@ -33,6 +33,7 @@ public class AnalisisController {
 	@ResponseBody public List<Integer> analize(@RequestBody LLamadoWrap urls){
 		List<String> parametro = new ArrayList<String>();
 		for(Llamado tll : urls.getUrls()) {
+			logger.info("URL used " + tll.getUrl());
 			parametro.add(tll.getUrl());
 		}
 		return serv.procesarURL(parametro);
