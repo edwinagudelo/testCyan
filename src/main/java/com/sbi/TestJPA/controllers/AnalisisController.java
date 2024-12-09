@@ -32,8 +32,10 @@ public class AnalisisController {
 	@PostMapping(path="/new",  consumes="application/json", produces="application/json")
 	@ResponseBody public List<Integer> analize(@RequestBody LLamadoWrap urls){
 		List<String> parametro = new ArrayList<String>();
+		String classPath = System.getProperty("java.class.path");
+		logger.info("The classpath is {}", classPath);
 		for(Llamado tll : urls.getUrls()) {
-			logger.info("URL used " + tll.getUrl());
+      logger.info("URL used {}", tll.getUrl());
 			parametro.add(tll.getUrl());
 		}
 		return serv.procesarURL(parametro);
