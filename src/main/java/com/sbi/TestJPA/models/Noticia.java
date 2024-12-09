@@ -23,9 +23,12 @@ public class Noticia {
 	@ManyToOne
 	@JoinColumn(name="idpeticion", referencedColumnName="id")
 	private Peticion idpeticion;
-	
-	
-	public Integer getId() {
+
+    public Noticia() {
+    }
+
+
+    public Integer getId() {
 		return id;
 	}
 	public void setId(Integer id) {
